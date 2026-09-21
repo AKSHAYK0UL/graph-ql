@@ -7,19 +7,20 @@ package graph
 
 import (
 	"context"
-	"fmt"
 
 	"github.com/AKSHAYK0UL/graph-ql/graph/model"
+	"github.com/AKSHAYK0UL/graph-ql/resolver"
 )
 
-// CreateTodo is the resolver for the createTodo field.
-func (r *mutationResolver) CreateTodo(ctx context.Context, input model.NewTodo) (*model.Todo, error) {
-	panic(fmt.Errorf("not implemented: CreateTodo - createTodo"))
+// CreateUser is the resolver for the createUser field.
+func (r *mutationResolver) CreateUser(ctx context.Context, input model.NewUser) (*model.User, error) {
+	// panic(fmt.Errorf("not implemented: CreateUser - createUser"))
+	return resolver.CreateUser(ctx, input.Name, input.Email)
 }
 
-// Todos is the resolver for the todos field.
-func (r *queryResolver) Todos(ctx context.Context) ([]*model.Todo, error) {
-	panic(fmt.Errorf("not implemented: Todos - todos"))
+// Users is the resolver for the users field.
+func (r *queryResolver) Users(ctx context.Context) ([]*model.User, error) {
+	return resolver.GetUsers(ctx)
 }
 
 // Mutation returns MutationResolver implementation.
