@@ -18,6 +18,14 @@ func (r *mutationResolver) CreateUser(ctx context.Context, input model.NewUser) 
 	return resolver.CreateUser(ctx, input.Name, input.Email)
 }
 
+// DeleteUser is the resolver for the deleteUser field.
+func (r *mutationResolver) DeleteUser(ctx context.Context, id string) (*bool, error) {
+	// panic(fmt.Errorf("not implemented: DeleteUser - deleteUser"))
+
+	ok, err := resolver.DeleteUser(ctx, id)
+	return &ok, err
+}
+
 // Users is the resolver for the users field.
 func (r *queryResolver) Users(ctx context.Context) ([]*model.User, error) {
 	return resolver.GetUsers(ctx)

@@ -24,6 +24,9 @@ func GetUsers(ctx context.Context) ([]*model.User, error) {
 			Name:  u.Name,
 			Email: u.Email,
 		})
+
 	}
 	return results, nil
 }
+
+//https://goplay.tools/snippet/KlZmpoLri5n

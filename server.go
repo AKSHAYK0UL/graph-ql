@@ -10,6 +10,7 @@ import (
 )
 
 func main() {
+
 	if err := config.ConnectDB(); err != nil {
 		log.Fatalf("failed to connect to database: %v", err)
 	}
@@ -19,6 +20,7 @@ func main() {
 			graph.Config{Resolvers: &graph.Resolver{}},
 		),
 	)
+
 	http.Handle("/graphql", srv)
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }

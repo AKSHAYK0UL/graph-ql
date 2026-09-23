@@ -19,4 +19,5 @@ input NewUser{
 
 type Mutation {
   createUser(input: NewUser!): User!
+  deleteUser(id:ID!):Boolean
 }

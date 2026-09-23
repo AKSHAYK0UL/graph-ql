@@ -27,3 +27,7 @@ func CreateUser(ctx context.Context, name, email string) (*model.User, error) {
 		Email: user.Email,
 	}, nil
 }
+
+func DeleteUser(ctx context.Context, id string) (bool, error) {
+	return respository.DeleteUser(id)
+}
